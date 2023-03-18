@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+ <h1>Regular Expresiion Tester</h1>
+ <form method="POST">
+ 	{{form.hidden_tag()}}
+ 	<div class="form-group">
+ 		{{ form.regex.label }} {{ form.regex(size=40)}}
+ 	</div>
+ 	<div class="form-group">
+ 		{{ form.test_string.label }} {{ form.test_string(size=40) }}
+ 	</div>
+ 	{{ form.submit }}
+ </form>
+ {% if result %}
+    <div class="result">
+    Result: {{result}}
+    </div>
+ {% endif %}
+{% endblock %}    		
